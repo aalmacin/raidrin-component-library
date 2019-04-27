@@ -1,0 +1,14 @@
+$base: 100%;
+$base-text: 1rem;
+
+$sizeMap: (
+  vs: calc(0.25 * #{$base}),
+  sm: calc(0.50 * #{$base}),
+  md:  #{$base},
+  lg: calc(1.25 * #{$base}),
+  vl: calc(1.5 * #{$base}),
+);
+
+$tokensConfig: (
+  sizeMap: $sizeMap
+);

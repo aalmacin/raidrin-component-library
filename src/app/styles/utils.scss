@@ -1,0 +1,5 @@
+@mixin generateCssClasses($prefix, $property, $scaleMap) {
+  @each $size, $value in $scaleMap {
+    .rd-#{$prefix}-#{$size} { #{$property}: $value; }
+  }
+}

@@ -1,0 +1,10 @@
+@import "./tokens.scss";
+@import "./utils.scss";
+
+// Size
+@mixin width($size) {
+  width: map-get(map-get($tokensConfig, 'sizeMap'), $size);
+}
+
+@include generateCssClasses('w', 'width', map-get($tokensConfig, 'sizeMap'));
+

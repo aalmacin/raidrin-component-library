@@ -1,13 +1,21 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'rd-flash-card',
   template: `
-    <p>Hello {{ heading }}</p>
+    <div class="heading rd-w-vs">
+      {{ heading }}
+    </div>
+    <div class="content rd-w-vs">
+      {{ content }}
+    </div>
   `,
   styleUrls: ['./flash-card.component.scss']
 })
 export class FlashCardComponent {
   @Input()
   heading = '';
+
+  @Input()
+  content = '';
 }
