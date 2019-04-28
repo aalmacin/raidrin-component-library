@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'rd-flash-card',
   template: `
-    <div class="heading rd-w-vs">
+    <div class="heading rd-w-vs rd-bc-green">
       {{ heading }}
     </div>
     <div class="content rd-w-vs">

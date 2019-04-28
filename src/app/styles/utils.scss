@@ -1,5 +1,15 @@
-@mixin generateCssClasses($prefix, $property, $scaleMap) {
-  @each $size, $value in $scaleMap {
-    .rd-#{$prefix}-#{$size} { #{$property}: $value; }
-  }
+@function generateComponentLibraryClass($class) {
+  @return ".rd-#{$class}"
 }
+
+// @mixin generateCssColorClasses($prefix, $property, $paletteMap) {
+//   @each $color, $colorMap in $paletteMap {
+//     @each $accent, $accentValue in $colorMap {
+//       @if($accent == 'base') {
+//         .rd-#{$prefix}-#{$color} { #{$property}: $accentValue; }
+//       } else {
+//         .rd-#{$prefix}-#{$color}-#{$accent} { #{$property}: $accentValue; }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,40 @@
+@import "../utils.scss";
+@import "../variables/direction.scss";
+
+@mixin _generateClass($class, $cssClass, $spaceValue) {
+  #{$class} {
+    #{$cssClass}: #{$spaceValue};
+  }
+}
+
+@function _generateSpaceClassName($prefix, $space, $direction) {
+  @return ".rd-#{$prefix}-#{$direction}-#{$space}";
+}
+
+@function _generateSpaceCssClass($type, $directionValue) {
+  @return "#{$type}-#{$directionValue}";
+}
+
+@mixin generateSpaceClasses($prefix, $type, $tokensConfig) {
+  $spaceMap: map-get($tokensConfig, 'spaceMap');
+
+  @each $direction, $directionValue in $directionMap {
+    @each $space, $spaceValue in $spaceMap {
+
+      @if type-of($directionValue) == 'map' {
+        @each $singleDirection, $singleDirectionValue in $directionValue {
+          @include _generateClass(
+            _generateSpaceClassName($prefix, $space, $singleDirection),
+            _generateSpaceCssClass($type, $singleDirectionValue),
+            $spaceValue)
+        }
+      } @else {
+          @include _generateClass(
+            _generateSpaceClassName($prefix, $space, $direction),
+            _generateSpaceCssClass($type, $directionValue),
+            $spaceValue)
+      }
+
+    }
+  }
+}

@@ -1,10 +1,39 @@
-@import "./tokens.scss";
-@import "./utils.scss";
+// @import "./utils.scss";
 
-// Size
-@mixin width($size) {
-  width: map-get(map-get($tokensConfig, 'sizeMap'), $size);
+// @function fromTokensConfig($mapName) {
+//   @return map-get($tokensConfig, $mapName);
+// }
+
+// $spaceMap: fromTokensConfig('spaceMap');
+// $paletteMap: fromTokensConfig('paletteMap');
+
+// @function fromSizeMap($space) {
+//   @return map-get($spaceMap, $space);
+// }
+
+// // Size
+// @mixin width($space) {
+//   width: fromSizeMap($space);
+// }
+
+// @include generateCssSpaceClasses('m', 'margin', $spaceMap);
+
+// // Background Colour
+
+// @include generateCssColorClasses('bc', 'background-color', $paletteMap)
+
+// @import "./tokens.scss";
+@import "./space/margin.scss";
+@import "./space/padding.scss";
+@import "./tokens.scss";
+
+@include generatePaddingClasses($tokensConfig);
+@include generateMarginClasses($tokensConfig);
+
+@mixin testItWorks() {
+  .rd-something {
+    color: #FFFFFF;
+  }
 }
 
-@include generateCssClasses('w', 'width', map-get($tokensConfig, 'sizeMap'));
-
+@include testItWorks();
