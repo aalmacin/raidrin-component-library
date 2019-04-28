@@ -24,7 +24,7 @@
       @if type-of($directionValue) == 'map' {
         @each $singleDirection, $singleDirectionValue in $directionValue {
           @include _generateClass(
-            _generateSpaceClassName($prefix, $space, $singleDirection),
+            _generateSpaceClassName($prefix, $space, $direction),
             _generateSpaceCssClass($type, $singleDirectionValue),
             $spaceValue)
         }
