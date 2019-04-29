@@ -1,34 +1,13 @@
-// @import "./utils.scss";
-
-// @function fromTokensConfig($mapName) {
-//   @return map-get($tokensConfig, $mapName);
-// }
-
-// $spaceMap: fromTokensConfig('spaceMap');
-// $paletteMap: fromTokensConfig('paletteMap');
-
-// @function fromSizeMap($space) {
-//   @return map-get($spaceMap, $space);
-// }
-
-// // Size
-// @mixin width($space) {
-//   width: fromSizeMap($space);
-// }
-
-// @include generateCssSpaceClasses('m', 'margin', $spaceMap);
-
-// // Background Colour
-
-// @include generateCssColorClasses('bc', 'background-color', $paletteMap)
-
-// @import "./tokens.scss";
 @import "./space/margin.scss";
 @import "./space/padding.scss";
+@import "./color/color.scss";
+
 @import "./tokens.scss";
 
 @include generatePaddingClasses($tokensConfig);
 @include generateMarginClasses($tokensConfig);
+
+@include generateBackgroundColorClasses($tokensConfig);
 
 @mixin testItWorks() {
   .rd-something {

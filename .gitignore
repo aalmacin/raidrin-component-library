@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 tokens-with-scss
+test/
