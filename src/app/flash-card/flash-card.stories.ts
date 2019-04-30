@@ -2,15 +2,19 @@ import { storiesOf } from '@storybook/angular';
 import { FlashCardComponent } from './flash-card.component';
 import { text } from '@storybook/addon-knobs';
 
-const stories = storiesOf('FlashCard', module);
+const stories = storiesOf('Raidrin|FlashCard', module);
 
 stories.add('Default', () => ({
   component: FlashCardComponent,
   props: {
-    heading: text('heading', 'Lorem ipsum dolor sit amet'),
-    content: text(
-      'content',
-      'Morbi egestas, justo ultrices lacinia consequat, tortor nisl malesuada mi, convallis posuere elit orci at risus.'
-    )
+    topic: text('topic', 'Lorem ipsum dolor sit amet'),
+    front: text(
+      'front',
+      'Morbi egestas, justo ultrices lacinia consequat?'
+    ),
+    back: text(
+      'back',
+      'Praesent dictum massa quis ligula tempus lobortis. Aliquam risus erat, tempus eget justo at, porttitor pellentesque neque.'
+    ),
   }
 }));

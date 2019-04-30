@@ -6,8 +6,12 @@
   }
 }
 
-@function _generatePaletteClassName($prefix, $palette, $color) {
-  @return ".rd-#{$prefix}-#{$palette}-#{$color}";
+@function _generatePaletteClassName($prefix, $palette, $accent) {
+  @if($accent == 'base') {
+    @return ".#{$prefix}-#{$palette}";
+  } @else {
+    @return ".#{$prefix}-#{$palette}-#{$accent}";
+  }
 }
 
 @mixin generateColorClasses($prefix, $type, $tokensConfig) {
@@ -24,5 +28,6 @@
 }
 
 @mixin generateBackgroundColorClasses($tokensConfig) {
-  @include generateColorClasses('bc', 'background-color', $tokensConfig)
+  @include generateColorClasses('bc', 'background-color', $tokensConfig);
+  @include generateColorClasses('rd-bc', 'background-color', $tokensConfig);
 }

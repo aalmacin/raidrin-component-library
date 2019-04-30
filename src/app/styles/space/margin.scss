@@ -2,5 +2,6 @@
 @import "../tokens.scss";
 
 @mixin generateMarginClasses($tokensConfig) {
-  @include generateSpaceClasses('m', 'margin', $tokensConfig)
+  @include generateSpaceClasses('m', 'margin', $tokensConfig);
+  @include generateSpaceClasses('rd-m', 'margin', $tokensConfig);
 }

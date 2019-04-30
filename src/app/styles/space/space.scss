@@ -8,7 +8,11 @@
 }
 
 @function _generateSpaceClassName($prefix, $space, $direction) {
-  @return ".rd-#{$prefix}-#{$direction}-#{$space}";
+  @if($direction == 'a') {
+    @return ".#{$prefix}-#{$space}";
+  } @else {
+    @return ".#{$prefix}-#{$direction}-#{$space}";
+  }
 }
 
 @function _generateSpaceCssClass($type, $directionValue) {

@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/angular';
 import { GlobalComponent } from './global.component';
 import { boolean } from '@storybook/addon-knobs';
 
-const stories = storiesOf('FlashCard', module);
+const stories = storiesOf('Raidrin|Global', module);
 
 stories.add('Default', () => ({
   component: GlobalComponent,
